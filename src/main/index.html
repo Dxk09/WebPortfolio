@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dylan Khan | Cybersecurity Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            }
+        }
+    </script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -14,7 +22,7 @@
         }
 
         .gradient-bg {
-            background: linear-gradient(135deg, #3d61ff 0%, #000000 100%);
+            background: linear-gradient(135deg, #30b3ff 0%, #3d4557 100%);
         }
 
         .card-hover {
@@ -74,7 +82,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: linear-gradient(90deg, #3d61ff, #000000);
+            background: linear-gradient(90deg, #30b3ff, #3d4557);
             transition: width 0.3s ease;
         }
 
@@ -83,7 +91,7 @@
         }
 
         .skill-badge {
-            background: linear-gradient(45deg, #3d61ff, #000000);
+            background: linear-gradient(45deg, #30b3ff,#3d4557);
             transition: all 0.3s ease;
         }
 
@@ -95,6 +103,46 @@
         .project-card {
             background: linear-gradient(145deg, #374151, #4b5563);
             border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        #projects {
+            background: linear-gradient(90deg, #86c9f0, #e6d0f7) ;
+        }
+
+        #about {
+            background: linear-gradient(90deg, #86c9f0, #e6d0f7) ;
+        }
+
+        /* Optimized glass effect */
+        .optimized-glass {
+            background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .optimized-glass:hover {
+            transform: translate3d(0, -3px, 0);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Optimized image rendering */
+        .project-image {
+            image-rendering: crisp-edges;
+            transition: transform 0.2s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Container optimization */
+        .container {
+            contain: layout style;
         }
 
         .image-gallery {
@@ -141,7 +189,7 @@
             </div>
             <h2 class="text-5xl font-bold mb-6 typing-animation">Cybersecurity & AI Portfolio</h2>
             <p class="text-xl max-w-3xl mx-auto leading-relaxed text-blue-100">
-                Welcome! This site showcase my projects and contributions during my Microsoft internship. I have been hands-on with Microsoft Entra ID, Microsoft Copilot, Azure, and more.
+                Welcome! This site showcases my projects and contributions during my Microsoft internship. I have been hands-on with Microsoft Entra ID, Microsoft Copilot, Azure, and more.
                 I am passionate about cybersecurity and Artificial Intelligence and am eager to continue learning to pave my future with Microsoft.
             </p>
             <div class="mt-8 flex justify-center space-x-4">
@@ -154,80 +202,201 @@
     </div>
 </section>
 
+<!-- Projects -->
+<section id="projects" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Projects</h2>
 
+        <!-- Project 1 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🔐 Microsoft Entra ID Environment</h3>
+            <p class="mt-2 mb-6">
+                For this project, I built and configured a test environment using Microsoft Entra ID. This
+                provided hands-on experience adding and managing users through both the Azure Portal and
+                command-line tools. This tenant was designed to enforce least-privileged access by designing
+                and implementing custom roles and policies to enhance security.
+            </p>
 
-        <!-- Projects -->
-        <section id="projects" class="py-16 bg-black-100">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
-
-                <!-- Project 1 -->
-                <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                    <h3 class="text-2xl font-semibold">🔐 Microsoft Entra ID Environment</h3>
-                    <p class="mt-2">For my Microsoft internship, I created a test environment using Entra ID to learn how to add users, create roles, and assign policies.</p>
-
-                    <ul class="list-disc list-inside mt-2">
-                        <li>Followed <a href="https://www.purplecloud.network/" target="_blank" class="text-blue-400 hover:underline">PurpleCloud Labs</a></li>
-                        <li>Created users with specified roles</li>
-                        <img src="assets/img_1.png" alt="List of created users"
-                             class="rounded-lg shadow-md mt-4 max-w-2xl w-auto mx-auto"
-                             style="image-rendering: crisp-edges;" />
-
-                        <li>Assigned roles to users</li>
-                        <img src="assets/img_2.png" alt="List of created users"
-                             class="rounded-lg shadow-md mt-4 max-w-2xl w-auto mx-auto"
-                             style="image-rendering: crisp-edges;" />
-
-                        <li>Created conditional access policies such as Block legacy authentication and Enforcing MFA</li>
-                        <img src="assets/img_3.png" alt="List of created users"
-                             class="rounded-lg shadow-md mt-4 max-w-2xl w-auto mx-auto"
-                             style="image-rendering: crisp-edges;" />
-
-                        <li>Enforce monthly access reviews for users</li>
-                        <div class="flex flex-wrap justify-center gap-6 mt-4">
-                            <img src="assets/img_4.png" alt="Access review screenshot"
-                                 class="rounded-lg shadow-md max-w-xs w-full object-cover" />
-                            <img src="assets/img_5.png" alt="Access review screenshot"
-                                 class="rounded-lg shadow-md max-w-xs w-full object-cover" />
-                        </div>
-
-                        <li>Review Audit logs of password resets, user updates, user invites, and role assignments </li>
-                        <img src="assets/img_6.png" alt="List of created users"
-                             class="rounded-lg shadow-md mt-4 max-w-2xl w-auto mx-auto"
-                             style="image-rendering: crisp-edges;" />
-
-
-                        <li>Automated user add using terminal on MacOS</li>
-                        <img src="assets/img_7.png" alt="List of created users"
-                             class="rounded-lg shadow-md mt-4 max-w-2xl w-auto mx-auto"
-                             style="image-rendering: crisp-edges;" />
-
-                        <li>Personal Theme for test environment</li>
-                        <img src="assets/img_8.png" alt="List of created users"
-                             class="rounded-lg shadow-md mt-4 max-w-2xl w-auto mx-auto"
-                             style="image-rendering: crisp-edges;" />
-                    </ul>
-
-                    <!-- Image shown outside list -->
-                    <a href="#" class="text-blue-400 hover:underline mt-4 inline-block">See walkthrough & screenshots →</a>
+            <ul class="list-disc list-inside space-y-4">
+                <li class="mb-3">Created users with specified roles</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_1.png"
+                            alt="List of created users"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-gray-700 rounded-lg p-6 mb-8">
-                    <h3 class="text-2xl font-semibold">🖥️ Azure Virtual Machine Deployment</h3>
-                    <p class="mt-2">Built and hardened a Windows Server VM using Azure, configured NSGs, installed monitoring agents, and set up RDP access.</p>
-                    <ul class="list-disc list-inside mt-2">
-                        <li>Deployed using ARM templates</li>
-                        <li>Configured endpoint protection & updates</li>
-                        <li>Monitored metrics and security logs</li>
-                    </ul>
-                    <a href="#" class="text-blue-400 hover:underline mt-2 inline-block">View full configuration →</a>
+                <li class="mb-3">Assigned roles to users</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_2.png"
+                            alt="User role assignments"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
                 </div>
-            </div>
-        </section>
 
+                <li class="mb-3">Created conditional access policies such as Block legacy authentication and Enforcing MFA</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_3.png"
+                            alt="Conditional access policies"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
 
-        <!-- About -->
+                <li class="mb-3">Enforce monthly access reviews for users</li>
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <img
+                            src="assets/img_4.png"
+                            alt="Access review screenshot"
+                            class="project-image rounded-lg shadow-md max-w-xs w-full object-cover"
+                            loading="lazy"
+                    />
+                    <img
+                            src="assets/img_5.png"
+                            alt="Access review screenshot"
+                            class="project-image rounded-lg shadow-md max-w-xs w-full object-cover"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Review Audit logs of password resets, user updates, user invites, and role assignments</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_6.png"
+                            alt="Audit logs"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Automated user add using terminal on MacOS</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_7.png"
+                            alt="Terminal automation"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Personal Theme for test environment</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_8.png"
+                            alt="Custom theme"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>
+                    User and Group Management: Learned to create, manage, and organize users and groups
+                    effectively with setting user attributes, assigning users to groups, and managing group
+                    access
+                </li>
+                <li>
+                    Role-Based Access Control (RBAC): Understanding how to assign built-in and custom roles to
+                    users to grant least-privilege access
+                </li>
+                <li>
+                    Conditional Access Policies: How to create and test conditional access policies to enforce
+                    security requirements like multi-factor authentication (MFA)
+                </li>
+                <li>Azure CLI on macOS Terminal: Learned how to use Azure CLI to manage and add users programmatically</li>
+            </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🖥️ Azure Virtual Machine Labs</h3>
+            <p class="mt-2 mb-6">
+                In this project, I utilized Microsoft Azure to create a virtual machine (VM) and installed
+                T-Pot, an open-source honeypot platform. A honeypot is a security tool designed to attract,
+                detect, and analyze malicious activity through the simulation of vulnerable services.
+            </p>
+            <ul class="list-disc list-inside space-y-4">
+                <li class="mb-3">Created Ubuntu VM for honeypot</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_9.png"
+                            alt="Ubuntu VM creation"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Installed tpotce via git clone</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_10.png"
+                            alt="T-Pot installation"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Set inbound network rules to allow tpotce connection</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_11.png"
+                            alt="Network security rules"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Opening page when loading into vm ip address at port 64297</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_14.png"
+                            alt="T-Pot web interface"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Kibana user interface to analyze honeypots and locations</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_12.png"
+                            alt="Kibana analytics dashboard"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Spiderfoot to view my digital footprint and compromised accounts</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_13.png"
+                            alt="Spiderfoot analysis"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>How to create and configure virtual machines using Azure CLI</li>
+                <li>Port management and securing access with firewall and Network Security Groups (NSGs)</li>
+                <li>Linux system administration, including package management and troubleshooting</li>
+                <li>Deployment and configuration of honeypot technologies to detect and analyze cyber threats</li>
+                <li>Security monitoring and analytics using ELK stack tools like Kibana for visualizing attack data</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
 <section id="about" class="py-20 bg-black-800">
     <div class="container mx-auto max-w-4xl text-center px-6">
         <h2 class="text-4xl font-bold mb-8 fade-in">
