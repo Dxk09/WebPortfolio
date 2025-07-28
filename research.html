@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dylan Khan | Academic E-Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            }
+        }
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #30b3ff 0%, #3d4557 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #667eea;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea; }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #30b3ff, #3d4557);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .skill-badge {
+            background: linear-gradient(45deg, #30b3ff,#3d4557);
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        #research, #about, #coursework {
+            background: linear-gradient(90deg, #86c9f0, #e6d0f7);
+        }
+
+        /* Optimized glass effect */
+        .optimized-glass {
+            background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .optimized-glass:hover {
+            transform: translate3d(0, -3px, 0);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .project-image {
+            image-rendering: crisp-edges;
+            transition: transform 0.2s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .container {
+            contain: layout style;
+        }
+
+        .headshot {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+<!-- Header -->
+<header class="gradient-bg shadow-2xl fixed w-full top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+        <h1 class="text-3xl font-bold flex items-center">
+            <i class="fas fa-graduation-cap mr-3 pulse-icon"></i>
+            Dylan Khan
+        </h1>
+        <nav class="flex space-x-6">
+            <a href="#home" class="nav-link font-medium hover:text-blue-200">Home</a>
+            <a href="#about" class="nav-link font-medium hover:text-blue-200">About</a>
+            <a href="#research" class="nav-link font-medium hover:text-blue-200">Research</a>
+            <a href="#coursework" class="nav-link font-medium hover:text-blue-200">Coursework</a>
+            <a href="#cv" class="nav-link font-medium hover:text-blue-200">CV/Resume</a>
+            <a href="#contact" class="nav-link font-medium hover:text-blue-200">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Home -->
+<section id="home" class="pt-24 pb-16 text-center gradient-bg">
+    <div class="container mx-auto px-6">
+        <div class="fade-in">
+            <!-- Headshot -->
+            <div class="mb-8">
+                <img src="assets/headshot.jpg" alt="Dylan Khan Headshot" class="headshot mx-auto mb-6" />
+            </div>
+            <h2 class="text-5xl font-bold mb-6 typing-animation">AI & Cybersecurity Research</h2>
+            <p class="text-xl max-w-4xl mx-auto leading-relaxed text-blue-100">
+                Welcome to my academic e-portfolio. I am a cybersecurity and AI researcher at the University of Florida,
+                with a focus on applying artificial intelligence to enhance cybersecurity frameworks. My research explores
+                the intersection of machine learning algorithms and threat detection systems, particularly in cloud environments
+                and identity management platforms like Microsoft Entra ID.
+            </p>
+            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">AI Research</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">Cybersecurity</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">Machine Learning</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">Cloud Security</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">About Me</h2>
+        <div class="optimized-glass rounded-2xl p-8 card-hover">
+            <p class="text-lg leading-relaxed text-gray-800 mb-8">
+                I am a dedicated researcher and student at the University of Florida, pursuing advanced studies in
+                cybersecurity and artificial intelligence. My academic journey has been focused on understanding how
+                AI can be leveraged to create more robust and intelligent security systems. I hold multiple industry
+                certifications including <strong class="text-blue-600">CompTIA Security+, SC-200, and SC-300</strong>,
+                and have gained practical experience through my Microsoft internship in cybersecurity and AI.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <i class="fas fa-university text-2xl text-blue-600 mb-2"></i>
+                    <h3 class="font-semibold text-black">Education</h3>
+                    <p class="text-sm text-gray-700">University of Florida<br>Cybersecurity & AI Focus</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-microscope text-2xl text-purple-600 mb-2"></i>
+                    <h3 class="font-semibold text-black">Research Interests</h3>
+                    <p class="text-sm text-gray-700">AI-Enhanced Threat Detection<br>Cloud Security Analytics</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-medal text-2xl text-yellow-600 mb-2"></i>
+                    <h3 class="font-semibold text-black">Certifications</h3>
+                    <p class="text-sm text-gray-700">Security+, SC-200, SC-300<br>MS-900</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research -->
+<section id="research" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Research</h2>
+
+        <!-- Research Project 1 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🔬 AI-Enhanced Identity Access Management</h3>
+            <p class="mt-2 mb-6">
+                This research project investigates the application of machine learning algorithms to enhance Microsoft Entra ID's
+                security capabilities. The study focuses on developing predictive models for anomalous user behavior detection
+                and automated threat response systems in cloud-based identity management platforms.
+            </p>
+
+            <!-- Research Media - Add your research image/video here -->
+            <div class="flex justify-center mb-6">
+                <img
+                        src="assets/research_diagram.png"
+                        alt="AI-Enhanced IAM Research Diagram"
+                        class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                        loading="lazy"
+                />
+            </div>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Research Methodology & Findings:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Implemented machine learning models for behavioral analysis of user authentication patterns</li>
+                <li>Developed automated conditional access policy recommendations based on risk assessment algorithms</li>
+                <li>Created predictive models for identifying potential security breaches in real-time</li>
+                <li>Analyzed the effectiveness of AI-driven threat detection compared to traditional rule-based systems</li>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Publications & Presentations:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Presented findings at UF Undergraduate Research Symposium 2024</li>
+                <li>Manuscript in preparation: "Machine Learning Applications in Cloud Identity Management"</li>
+            </ul>
+        </div>
+
+        <!-- Research Project 2 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🛡️ Honeypot Intelligence Systems</h3>
+            <p class="mt-2 mb-6">
+                This research explores the integration of artificial intelligence with honeypot technologies to create
+                more sophisticated deception systems. The project involves developing adaptive honeypots that can
+                dynamically adjust their behavior based on attacker patterns using machine learning algorithms.
+            </p>
+
+            <!-- Add your honeypot research media here -->
+            <div class="flex justify-center mb-6">
+                <img
+                        src="assets/honeypot_research.png"
+                        alt="Honeypot Intelligence System Architecture"
+                        class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                        loading="lazy"
+                />
+            </div>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Research Contributions:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Designed intelligent honeypot systems using reinforcement learning algorithms</li>
+                <li>Analyzed attack patterns and developed predictive models for threat intelligence</li>
+                <li>Created automated response mechanisms for enhanced threat mitigation</li>
+                <li>Evaluated the effectiveness of AI-driven deception technologies</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Coursework -->
+<section id="coursework" class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Coursework</h2>
+        <div class="optimized-glass rounded-2xl p-8 card-hover">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-black">Cybersecurity Courses</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Network Security Fundamentals</li>
+                        <li>Cryptography and Information Security</li>
+                        <li>Digital Forensics and Incident Response</li>
+                        <li>Ethical Hacking and Penetration Testing</li>
+                        <li>Cloud Security Architecture</li>
+                        <li>Risk Management and Compliance</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-black">AI & Computer Science Courses</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Machine Learning Algorithms</li>
+                        <li>Artificial Intelligence Fundamentals</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Database Management Systems</li>
+                        <li>Software Engineering Principles</li>
+                        <li>Statistics for Data Science</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4 text-black">Relevant Projects & Achievements</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Dean's List Recognition (Multiple Semesters)</li>
+                    <li>Undergraduate Research Fellowship Recipient</li>
+                    <li>Microsoft Cybersecurity & AI Internship</li>
+                    <li>Industry Certifications: Security+, SC-200, SC-300, MS-900</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CV/Resume -->
+<section id="cv" class="py-20 gradient-bg">
+    <div class="container mx-auto max-w-2xl text-center px-6">
+        <h2 class="text-4xl font-bold mb-8">
+            <i class="fas fa-file-alt mr-4"></i>
+            CV/Resume
+        </h2>
+        <p class="text-xl mb-8 text-blue-100">
+            Download my complete curriculum vitae and resume
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fas fa-graduation-cap text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-4">Academic CV</h3>
+                <a href="assets/Dylan_Khan_CV.pdf" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    View CV
+                </a>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fas fa-briefcase text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-4">Professional Resume</h3>
+                <a href="assets/Dylan_Khan_Resume.pdf" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-gray-800">
+    <div class="container mx-auto max-w-2xl text-center px-6">
+        <h2 class="text-4xl font-bold mb-8 text-white">
+            <i class="fas fa-envelope mr-4"></i>
+            Contact
+        </h2>
+        <p class="text-xl mb-8 text-gray-300">
+            Let's connect and discuss research opportunities!
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="optimized-glass rounded-xl p-6 card-hover">
+                <i class="fas fa-university text-3xl mb-4 text-blue-400"></i>
+                <h3 class="font-semibold mb-2 text-white">UF Email</h3>
+                <a href="mailto:dylan.khan@ufl.edu" class="text-sm text-blue-300 hover:text-blue-200">dylan.khan@ufl.edu</a>
+            </div>
+            <div class="optimized-glass rounded-xl p-6 card-hover">
+                <i class="fab fa-linkedin text-3xl mb-4 text-blue-400"></i>
+                <h3 class="font-semibold mb-2 text-white">LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/dylan-khan-ba64b72a3" target="_blank" class="text-sm text-blue-300 hover:text-blue-200">Professional Profile</a>
+            </div>
+            <div class="optimized-glass rounded-xl p-6 card-hover">
+                <i class="fab fa-github text-3xl mb-4 text-blue-400"></i>
+                <h3 class="font-semibold mb-2 text-white">GitHub</h3>
+                <a href="https://github.com/Dxk09" target="_blank" class="text-sm text-blue-300 hover:text-blue-200">Research Repository</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-center py-8 border-t border-gray-700">
+    <div class="container mx-auto px-6">
+        <p class="text-gray-400">&copy; 2025 Dylan Khan - University of Florida. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+            <i class="fas fa-graduation-cap text-blue-400"></i>
+            <i class="fas fa-microscope text-blue-400"></i>
+            <i class="fas fa-brain text-blue-400"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add scroll effect for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abbae183-0d05-4290-a5d3-1bd4a2dcfa43" name="Changes" comment="lil bit of this lil bit of that">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebPortfolio/research.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPortfolio" beforeDir="false" afterPath="$PROJECT_DIR$/WebPortfolio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/WebPortfolio" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -108,7 +109,7 @@
       <workItem from="1752160704320" duration="1121000" />
       <workItem from="1752516275499" duration="4657000" />
       <workItem from="1752766865614" duration="602000" />
-      <workItem from="1753717392189" duration="2419000" />
+      <workItem from="1753717392189" duration="2801000" />
     </task>
     <task id="LOCAL-00001" summary="Project 1">
       <option name="closed" value="true" />
