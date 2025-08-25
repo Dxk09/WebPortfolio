@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abbae183-0d05-4290-a5d3-1bd4a2dcfa43" name="Changes" comment="added home page just have to add resume/cv">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="abbae183-0d05-4290-a5d3-1bd4a2dcfa43" name="Changes" comment="resume addition" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +110,7 @@
       <workItem from="1754927561078" duration="2260000" />
       <workItem from="1755012046781" duration="1913000" />
       <workItem from="1756150520822" duration="2143000" />
-      <workItem from="1756153632835" duration="618000" />
+      <workItem from="1756153632835" duration="733000" />
     </task>
     <task id="LOCAL-00001" summary="Project 1">
       <option name="closed" value="true" />
@@ -202,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756153528073</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="resume addition">
+      <option name="closed" value="true" />
+      <created>1756156182372</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1756156182372</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +223,7 @@
     <MESSAGE value="project 3 + images" />
     <MESSAGE value="lil bit of this lil bit of that" />
     <MESSAGE value="added home page just have to add resume/cv" />
-    <option name="LAST_COMMIT_MESSAGE" value="added home page just have to add resume/cv" />
+    <MESSAGE value="resume addition" />
+    <option name="LAST_COMMIT_MESSAGE" value="resume addition" />
   </component>
 </project>
