@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abbae183-0d05-4290-a5d3-1bd4a2dcfa43" name="Changes" comment="lil bit of this lil bit of that" />
+    <list default="true" id="abbae183-0d05-4290-a5d3-1bd4a2dcfa43" name="Changes" comment="added home page just have to add resume/cv" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +109,7 @@
       <workItem from="1753717392189" duration="2872000" />
       <workItem from="1754927561078" duration="2260000" />
       <workItem from="1755012046781" duration="1913000" />
-      <workItem from="1756150520822" duration="1704000" />
+      <workItem from="1756150520822" duration="2104000" />
     </task>
     <task id="LOCAL-00001" summary="Project 1">
       <option name="closed" value="true" />
@@ -183,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756153034293</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added home page just have to add resume/cv">
+      <option name="closed" value="true" />
+      <created>1756153317722</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1756153317722</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +205,7 @@
     <MESSAGE value="project 3" />
     <MESSAGE value="project 3 + images" />
     <MESSAGE value="lil bit of this lil bit of that" />
-    <option name="LAST_COMMIT_MESSAGE" value="lil bit of this lil bit of that" />
+    <MESSAGE value="added home page just have to add resume/cv" />
+    <option name="LAST_COMMIT_MESSAGE" value="added home page just have to add resume/cv" />
   </component>
 </project>
