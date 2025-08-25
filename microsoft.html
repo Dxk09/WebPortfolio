@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dylan Khan | Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            }
+        }
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #30b3ff 0%, #3d4557 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #667eea;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea; }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #30b3ff, #3d4557);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .skill-badge {
+            background: linear-gradient(45deg, #30b3ff,#3d4557);
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #374151, #4b5563);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        #projects {
+            background: linear-gradient(90deg, #86c9f0, #e6d0f7) ;
+        }
+
+        #about {
+            background: linear-gradient(90deg, #86c9f0, #e6d0f7) ;
+        }
+
+        /* Optimized glass effect */
+        .optimized-glass {
+            background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transform: translate3d(0, 0, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .optimized-glass:hover {
+            transform: translate3d(0, -3px, 0);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Optimized image rendering */
+        .project-image {
+            image-rendering: crisp-edges;
+            transition: transform 0.2s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Container optimization */
+        .container {
+            contain: layout style;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .image-item {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+<!-- Header -->
+<header class="gradient-bg shadow-2xl fixed w-full top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+        <h1 class="text-3xl font-bold flex items-center">
+            <i class="fas fa-shield-alt mr-3 pulse-icon"></i>
+            Dylan Khan
+        </h1>
+        <nav class="flex space-x-6">
+            <a href="index.html" class="nav-link font-medium hover:text-blue-200">Home</a>
+            <a href="#Internship" class="nav-link font-medium hover:text-blue-200">Internship</a>
+            <a href="#projects" class="nav-link font-medium hover:text-blue-200">Projects</a>
+            <a href="#about" class="nav-link font-medium hover:text-blue-200">About</a>
+            <a href="#contact" class="nav-link font-medium hover:text-blue-200">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Home -->
+<section id="Internship" class="pt-24 pb-16 text-center gradient-bg">
+    <div class="container mx-auto px-6">
+        <div class="fade-in">
+            <div class="mb-8">
+                <i class="fas fa-user-shield text-6xl mb-6 text-blue-200"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-6 typing-animation">Microsoft Cybersecurity & AI Portfolio</h2>
+            <p class="text-xl max-w-3xl mx-auto leading-relaxed text-blue-100">
+                Welcome! This site showcases my projects and contributions during my Microsoft internship. I have been hands-on with Microsoft Entra ID, Microsoft Copilot, Azure, and more.
+                I am passionate about cybersecurity and Artificial Intelligence and am eager to continue learning to pave my future with Microsoft.
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Security+</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Azure</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Entra ID</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Copilot</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🔐 Microsoft Entra ID Environment</h3>
+            <p class="mt-2 mb-6">
+                For this project, I built and configured a test environment using Microsoft Entra ID. This
+                provided hands-on experience adding and managing users through both the Azure Portal and
+                command-line tools. This tenant was designed to enforce least-privileged access by designing
+                and implementing custom roles and policies to enhance security.
+            </p>
+
+            <ul class="list-disc list-inside space-y-4">
+                <li class="mb-3">Created users with specified roles</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_1.png"
+                            alt="List of created users"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Assigned roles to users</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_2.png"
+                            alt="User role assignments"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Created conditional access policies such as Block legacy authentication and Enforcing MFA</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_3.png"
+                            alt="Conditional access policies"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Enforce monthly access reviews for users</li>
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <img
+                            src="assets/img_4.png"
+                            alt="Access review screenshot"
+                            class="project-image rounded-lg shadow-md max-w-xs w-full object-cover"
+                            loading="lazy"
+                    />
+                    <img
+                            src="assets/img_5.png"
+                            alt="Access review screenshot"
+                            class="project-image rounded-lg shadow-md max-w-xs w-full object-cover"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Review Audit logs of password resets, user updates, user invites, and role assignments</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_6.png"
+                            alt="Audit logs"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Automated user add using terminal on MacOS</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_7.png"
+                            alt="Terminal automation"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Personal Theme for test environment</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_8.png"
+                            alt="Custom theme"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>
+                    User and Group Management: Learned to create, manage, and organize users and groups
+                    effectively with setting user attributes, assigning users to groups, and managing group
+                    access
+                </li>
+                <li>
+                    Role-Based Access Control (RBAC): Understanding how to assign built-in and custom roles to
+                    users to grant least-privilege access
+                </li>
+                <li>
+                    Conditional Access Policies: How to create and test conditional access policies to enforce
+                    security requirements like multi-factor authentication (MFA)
+                </li>
+                <li>Azure CLI on macOS Terminal: Learned how to use Azure CLI to manage and add users programmatically</li>
+            </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🖥️ Azure Virtual Machine Labs</h3>
+            <p class="mt-2 mb-6">
+                In this project, I utilized Microsoft Azure to create a virtual machine (VM) and installed
+                T-Pot, an open-source honeypot platform. A honeypot is a security tool designed to attract,
+                detect, and analyze malicious activity through the simulation of vulnerable services.
+            </p>
+            <ul class="list-disc list-inside space-y-4">
+                <li class="mb-3">Created Ubuntu VM for honeypot</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_9.png"
+                            alt="Ubuntu VM creation"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Installed tpotce via git clone</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_10.png"
+                            alt="T-Pot installation"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Set inbound network rules to allow tpotce connection</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_11.png"
+                            alt="Network security rules"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Opening page when loading into vm ip address at port 64297</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_14.png"
+                            alt="T-Pot web interface"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Kibana user interface to analyze honeypots and locations</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_12.png"
+                            alt="Kibana analytics dashboard"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Spiderfoot to view my digital footprint and compromised accounts</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_13.png"
+                            alt="Spiderfoot analysis"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>How to create and configure virtual machines using Azure CLI</li>
+                <li>Port management and securing access with firewall and Network Security Groups (NSGs)</li>
+                <li>Linux system administration, including package management and troubleshooting</li>
+                <li>Deployment and configuration of honeypot technologies to detect and analyze cyber threats</li>
+                <li>Security monitoring and analytics using ELK stack tools like Kibana for visualizing attack data</li>
+            </ul>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4">🖥️ Microsoft Modern Work Copilot Agent</h3>
+            <p class="mt-2 mb-6">
+                In this project, I collaborated with the Modern Work team and utilized SharePoint and Copilot Studio to build an AI chatbot tailored to Modern Work use cases.
+            </p>
+
+            <ul class="list-disc list-inside space-y-4">
+                <li class="mb-3">Created starter prompts and agent instructions</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_15.png"
+                            alt="Defining the agent's role"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Edited the agent’s purpose and connected it to a SharePoint-based knowledge base</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_16.png"
+                            alt="Edit Agent"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+
+                <li class="mb-3">Deployed the final AI agent for internal use via Microsoft Teams</li>
+                <div class="flex justify-center mb-6">
+                    <img
+                            src="assets/img_17.png"
+                            alt="Final Agent"
+                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                            loading="lazy"
+                    />
+                </div>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>How to design prompt flows and guide AI behavior in SharePoint</li>
+                <li>Integrating and sourcing SharePoint libraries as dynamic knowledge bases</li>
+                <li>Configuring AI agent roles, access controls, and deployment within Microsoft Teams</li>
+                <li>Collaborating with cross-functional teams to support internal Microsoft use cases</li>
+                <li>Testing and refining chatbot performance based on user needs and feedback</li>
+            </ul>
+
+            <h3 class="font-bold text-lg mt-8 mb-4">Want to learn how to build your own SharePoint agent?</h3>
+            <div class="mt-4">
+                <a href="assets/SharePoint%20Agent%20Blueprint.pdf" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    Click Here to View Guide
+                </a>
+            </div>
+    </div>
+
+    </div>
+
+
+
+
+</section>
+
+
+<!-- About -->
+<section id="about" class="py-20 bg-black-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">About Me</h2>
+
+            <div class="optimized-glass rounded-2xl p-8 card-hover">
+
+                <p class="text-lg leading-relaxed text-gray-800 mb-8">
+                    I'm an aspiring cybersecurity professional with hands-on experience in cloud security labs and Entra ID configurations.
+                    I hold the <strong class="text-blue-600">CompTIA Security+, SC-200, and SC-300</strong> certifications and have research experience in AI and cybersecurity.
+                    I'm passionate about working with Microsoft and building secure modern work environments.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <i class="fas fa-medal text-2xl text-purple-600 mb-2"></i>
+                        <h3 class="font-semibold text-black">Certified</h3>
+                        <p class="text-sm text-gray-700">CompTIA Security+, SC-200, SC-300, and MS-900</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-microscope text-2xl text-blue-600 mb-2"></i>
+                        <h3 class="font-semibold text-black">UF AI Research</h3>
+                        <p class="text-sm text-gray-700">AI & Cybersecurity</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex justify-center mb-2">
+                            <img src="assets/microsoft.png" alt="Microsoft Logo"
+                                 class="w-10 h-10  transition duration-300" />
+                        </div>
+                        <h3 class="font-semibold text-black">Experience</h3>
+                        <p class="text-sm text-gray-700">Microsoft Cybersecurity & AI Internship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 gradient-bg">
+    <div class="container mx-auto max-w-2xl text-center px-6">
+        <h2 class="text-4xl font-bold mb-8">
+            <i class="fas fa-envelope mr-4"></i>
+            Let's Connect
+        </h2>
+        <p class="text-xl mb-8 text-blue-100">
+            Ready to collaborate on cybersecurity projects or discuss opportunities!
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="mailto:khan.dxk@gmail.com" class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fas fa-envelope text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-2">Email</h3>
+                <p class="text-sm text-blue-100">Khan.dxk@gmail.com</p>
+            </a>
+            <a href="https://www.linkedin.com/in/dylan-khan-ba64b72a3" target="_blank" class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fab fa-linkedin text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-2">LinkedIn</h3>
+                <p class="text-sm text-blue-100">Professional Profile</p>
+            </a>
+            <a href="https://github.com/Dxk09" target="_blank" class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fab fa-github text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-2">GitHub</h3>
+                <p class="text-sm text-blue-100">Code Repository</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-center py-8 border-t border-gray-700">
+    <div class="container mx-auto px-6">
+        <p class="text-gray-400">&copy; 2025 Dylan Khan. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+            <i class="fas fa-shield-alt text-blue-400"></i>
+            <i class="fas fa-lock text-blue-400"></i>
+            <i class="fas fa-cloud text-blue-400"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add scroll effect for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>

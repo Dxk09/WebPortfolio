@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dylan Khan | Cybersecurity Portfolio</title>
+    <title>Dylan Khan | Academic E-Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -100,17 +100,8 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        .project-card {
-            background: linear-gradient(145deg, #374151, #4b5563);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        #projects {
-            background: linear-gradient(90deg, #86c9f0, #e6d0f7) ;
-        }
-
-        #about {
-            background: linear-gradient(90deg, #86c9f0, #e6d0f7) ;
+        #research, #about, #coursework {
+            background: linear-gradient(90deg, #86c9f0, #e6d0f7);
         }
 
         /* Optimized glass effect */
@@ -130,7 +121,6 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
         }
 
-        /* Optimized image rendering */
         .project-image {
             image-rendering: crisp-edges;
             transition: transform 0.2s ease;
@@ -140,26 +130,17 @@
             transform: scale(1.02);
         }
 
-        /* Container optimization */
         .container {
             contain: layout style;
         }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .image-item {
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .image-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        .headshot {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -168,361 +149,230 @@
 <header class="gradient-bg shadow-2xl fixed w-full top-0 z-50">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
         <h1 class="text-3xl font-bold flex items-center">
-            <i class="fas fa-shield-alt mr-3 pulse-icon"></i>
+            <i class="fas fa-graduation-cap mr-3 pulse-icon"></i>
             Dylan Khan
         </h1>
         <nav class="flex space-x-6">
-            <a href="research.html" class="nav-link font-medium hover:text-blue-200">Home</a>
-            <a href="#Internship" class="nav-link font-medium hover:text-blue-200">Internship</a>
-            <a href="#projects" class="nav-link font-medium hover:text-blue-200">Projects</a>
+            <a href="#home" class="nav-link font-medium hover:text-blue-200">Home</a>
+            <a href="microsoft.html" class="nav-link font-medium hover:text-blue-200">Internship</a>
             <a href="#about" class="nav-link font-medium hover:text-blue-200">About</a>
+            <a href="#research" class="nav-link font-medium hover:text-blue-200">Research</a>
+            <a href="#coursework" class="nav-link font-medium hover:text-blue-200">Coursework</a>
+            <a href="#cv" class="nav-link font-medium hover:text-blue-200">CV/Resume</a>
             <a href="#contact" class="nav-link font-medium hover:text-blue-200">Contact</a>
         </nav>
     </div>
 </header>
-
 <!-- Home -->
-<section id="Internship" class="pt-24 pb-16 text-center gradient-bg">
+<section id="home" class="pt-24 pb-16 text-center gradient-bg">
     <div class="container mx-auto px-6">
         <div class="fade-in">
+            <!-- Headshot -->
             <div class="mb-8">
-                <i class="fas fa-user-shield text-6xl mb-6 text-blue-200"></i>
+                <img src="assets/foto.jpeg" alt="Dylan Khan Headshot" class="headshot mx-auto mb-6" />
             </div>
-            <h2 class="text-3xl font-bold mb-6 typing-animation">Microsoft Cybersecurity & AI Portfolio</h2>
-            <p class="text-xl max-w-3xl mx-auto leading-relaxed text-blue-100">
-                Welcome! This site showcases my projects and contributions during my Microsoft internship. I have been hands-on with Microsoft Entra ID, Microsoft Copilot, Azure, and more.
-                I am passionate about cybersecurity and Artificial Intelligence and am eager to continue learning to pave my future with Microsoft.
+            <h2 class="text-5xl font-bold mb-6 typing-animation">AI & Cybersecurity Research</h2>
+            <p class="text-xl max-w-4xl mx-auto leading-relaxed text-blue-100">
+                Hi, I’m Dylan Khan — an AI and cybersecurity researcher at the University of Florida, dedicated to building smarter, more resilient digital defenses. I specialize in applying machine learning to real-world security challenges, with a focus on detecting zero-day anomalies faster and more accurately. My work bridges advanced AI research with practical cybersecurity strategies, driven by the goal of staying one step ahead of evolving threats. I thrive on solving complex problems, pushing the boundaries of technology, and continuously expanding my expertise in this rapidly changing field.
             </p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Security+</span>
-                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Azure</span>
-                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Entra ID</span>
-                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Copilot</span>
+            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">AI Research</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">Cybersecurity</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium mb-2">Machine Learning</span>
             </div>
         </div>
     </div>
 </section>
-
-<!-- Projects -->
-<section id="projects" class="py-16">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-8 text-black">Projects</h2>
-
-        <!-- Project 1 -->
-        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
-            <h3 class="text-2xl font-semibold mb-4">🔐 Microsoft Entra ID Environment</h3>
-            <p class="mt-2 mb-6">
-                For this project, I built and configured a test environment using Microsoft Entra ID. This
-                provided hands-on experience adding and managing users through both the Azure Portal and
-                command-line tools. This tenant was designed to enforce least-privileged access by designing
-                and implementing custom roles and policies to enhance security.
-            </p>
-
-            <ul class="list-disc list-inside space-y-4">
-                <li class="mb-3">Created users with specified roles</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_1.png"
-                            alt="List of created users"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Assigned roles to users</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_2.png"
-                            alt="User role assignments"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Created conditional access policies such as Block legacy authentication and Enforcing MFA</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_3.png"
-                            alt="Conditional access policies"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Enforce monthly access reviews for users</li>
-                <div class="flex flex-wrap justify-center gap-4 mb-6">
-                    <img
-                            src="assets/img_4.png"
-                            alt="Access review screenshot"
-                            class="project-image rounded-lg shadow-md max-w-xs w-full object-cover"
-                            loading="lazy"
-                    />
-                    <img
-                            src="assets/img_5.png"
-                            alt="Access review screenshot"
-                            class="project-image rounded-lg shadow-md max-w-xs w-full object-cover"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Review Audit logs of password resets, user updates, user invites, and role assignments</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_6.png"
-                            alt="Audit logs"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Automated user add using terminal on MacOS</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_7.png"
-                            alt="Terminal automation"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Personal Theme for test environment</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_8.png"
-                            alt="Custom theme"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-            </ul>
-
-            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
-            <ul class="list-disc list-inside space-y-2">
-                <li>
-                    User and Group Management: Learned to create, manage, and organize users and groups
-                    effectively with setting user attributes, assigning users to groups, and managing group
-                    access
-                </li>
-                <li>
-                    Role-Based Access Control (RBAC): Understanding how to assign built-in and custom roles to
-                    users to grant least-privilege access
-                </li>
-                <li>
-                    Conditional Access Policies: How to create and test conditional access policies to enforce
-                    security requirements like multi-factor authentication (MFA)
-                </li>
-                <li>Azure CLI on macOS Terminal: Learned how to use Azure CLI to manage and add users programmatically</li>
-            </ul>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
-            <h3 class="text-2xl font-semibold mb-4">🖥️ Azure Virtual Machine Labs</h3>
-            <p class="mt-2 mb-6">
-                In this project, I utilized Microsoft Azure to create a virtual machine (VM) and installed
-                T-Pot, an open-source honeypot platform. A honeypot is a security tool designed to attract,
-                detect, and analyze malicious activity through the simulation of vulnerable services.
-            </p>
-            <ul class="list-disc list-inside space-y-4">
-                <li class="mb-3">Created Ubuntu VM for honeypot</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_9.png"
-                            alt="Ubuntu VM creation"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Installed tpotce via git clone</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_10.png"
-                            alt="T-Pot installation"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Set inbound network rules to allow tpotce connection</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_11.png"
-                            alt="Network security rules"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Opening page when loading into vm ip address at port 64297</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_14.png"
-                            alt="T-Pot web interface"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Kibana user interface to analyze honeypots and locations</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_12.png"
-                            alt="Kibana analytics dashboard"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Spiderfoot to view my digital footprint and compromised accounts</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_13.png"
-                            alt="Spiderfoot analysis"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-            </ul>
-
-            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
-            <ul class="list-disc list-inside space-y-2">
-                <li>How to create and configure virtual machines using Azure CLI</li>
-                <li>Port management and securing access with firewall and Network Security Groups (NSGs)</li>
-                <li>Linux system administration, including package management and troubleshooting</li>
-                <li>Deployment and configuration of honeypot technologies to detect and analyze cyber threats</li>
-                <li>Security monitoring and analytics using ELK stack tools like Kibana for visualizing attack data</li>
-            </ul>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
-            <h3 class="text-2xl font-semibold mb-4">🖥️ Microsoft Modern Work Copilot Agent</h3>
-            <p class="mt-2 mb-6">
-                In this project, I collaborated with the Modern Work team and utilized SharePoint and Copilot Studio to build an AI chatbot tailored to Modern Work use cases.
-            </p>
-
-            <ul class="list-disc list-inside space-y-4">
-                <li class="mb-3">Created starter prompts and agent instructions</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_15.png"
-                            alt="Defining the agent's role"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Edited the agent’s purpose and connected it to a SharePoint-based knowledge base</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_16.png"
-                            alt="Edit Agent"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-
-                <li class="mb-3">Deployed the final AI agent for internal use via Microsoft Teams</li>
-                <div class="flex justify-center mb-6">
-                    <img
-                            src="assets/img_17.png"
-                            alt="Final Agent"
-                            class="project-image rounded-lg shadow-md max-w-2xl w-full"
-                            loading="lazy"
-                    />
-                </div>
-            </ul>
-
-            <h3 class="font-bold text-lg mt-8 mb-4">Through this project, I've learned:</h3>
-            <ul class="list-disc list-inside space-y-2">
-                <li>How to design prompt flows and guide AI behavior in SharePoint</li>
-                <li>Integrating and sourcing SharePoint libraries as dynamic knowledge bases</li>
-                <li>Configuring AI agent roles, access controls, and deployment within Microsoft Teams</li>
-                <li>Collaborating with cross-functional teams to support internal Microsoft use cases</li>
-                <li>Testing and refining chatbot performance based on user needs and feedback</li>
-            </ul>
-
-            <h3 class="font-bold text-lg mt-8 mb-4">Want to learn how to build your own SharePoint agent?</h3>
-            <div class="mt-4">
-                <a href="assets/SharePoint%20Agent%20Blueprint.pdf" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">
-                    <i class="fas fa-file-pdf mr-2"></i>
-                    Click Here to View Guide
-                </a>
-            </div>
-    </div>
-
-    </div>
-
-
-
-
-</section>
-
 
 <!-- About -->
-<section id="about" class="py-20 bg-black-800">
+<section id="about" class="py-20">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-8 text-black">About Me</h2>
-
-            <div class="optimized-glass rounded-2xl p-8 card-hover">
-
-                <p class="text-lg leading-relaxed text-gray-800 mb-8">
-                    I'm an aspiring cybersecurity professional with hands-on experience in cloud security labs and Entra ID configurations.
-                    I hold the <strong class="text-blue-600">CompTIA Security+, SC-200, and SC-300</strong> certifications and have research experience in AI and cybersecurity.
-                    I'm passionate about working with Microsoft and building secure modern work environments.
-                </p>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <i class="fas fa-medal text-2xl text-purple-600 mb-2"></i>
-                        <h3 class="font-semibold text-black">Certified</h3>
-                        <p class="text-sm text-gray-700">CompTIA Security+, SC-200, SC-300, and MS-900</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-microscope text-2xl text-blue-600 mb-2"></i>
-                        <h3 class="font-semibold text-black">UF AI Research</h3>
-                        <p class="text-sm text-gray-700">AI & Cybersecurity</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="flex justify-center mb-2">
-                            <img src="assets/microsoft.png" alt="Microsoft Logo"
-                                 class="w-10 h-10  transition duration-300" />
-                        </div>
-                        <h3 class="font-semibold text-black">Experience</h3>
-                        <p class="text-sm text-gray-700">Microsoft Cybersecurity & AI Internship</p>
-                    </div>
+        <div class="optimized-glass rounded-2xl p-8 card-hover">
+            <p class="text-lg leading-relaxed text-gray-800 mb-8">
+                I am a fourth-year student at the University of Florida, specializing in cybersecurity and artificial intelligence. My academic journey involves undergraduate research that explores the benefits of artificial intelligence in cybersecurity as well as earning multiple industry certifications, including <strong class="text-blue-600">CompTIA Security+, SC-200, SC-300, and MS-900</strong>. where I worked on applying AI and cybersecurity solutions to real-world challenges.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <i class="fas fa-university text-2xl text-blue-600 mb-2"></i>
+                    <h3 class="font-semibold text-black">Education</h3>
+                    <p class="text-sm text-gray-700">University of Florida<br>Cybersecurity & AI Focus</p>
                 </div>
+                <div class="text-center">
+                    <i class="fas fa-microscope text-2xl text-purple-600 mb-2"></i>
+                    <h3 class="font-semibold text-black">Research Interests</h3>
+                    <p class="text-sm text-gray-700">AI-Enhanced Threat Detection<br>Cloud Security Analytics</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-medal text-2xl text-yellow-600 mb-2"></i>
+                    <h3 class="font-semibold text-black">Certifications</h3>
+                    <p class="text-sm text-gray-700">Security+, SC-200, SC-300,<br>MS-900</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research -->
+<section id="research" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Research</h2>
+
+        <!-- Research Project 1 -->
+        <div class="optimized-glass rounded-lg p-6 mb-8 text-black">
+            <h3 class="text-2xl font-semibold mb-4"> Zero-Day Detection with Machine Learning</h3>
+
+            <!-- Required Details -->
+            <p><strong>PI:</strong> Professor Ian Flood</p>
+            <p><strong>Institution & Department:</strong> University of Florida, College of Design, Construction and Planning</p>
+            <p><strong>Affiliation:</strong> Aug 2024 – Present</p>
+
+            <!-- Research Focus -->
+            <h3 class="font-bold text-lg mt-6 mb-2">Research Focus:</h3>
+            <p class="mb-6">
+                In an era where our digital footprints are larger and more vulnerable than ever, zero-day attacks represent one of the most significant cybersecurity threats.
+                My research focuses on leveraging advanced machine learning algorithms to enhance Intrusion Detection Systems (IDS), enabling real-time detection of previously unseen vulnerabilities and attack patterns.
+                By moving beyond traditional signature-based detection, this work aims to develop adaptive AI models that continuously learn from evolving network traffic and user behavior to proactively identify emerging threats.
+            </p>
+
+            <!-- Research Media -->
+            <div class="flex justify-center mb-6">
+                <img
+                        src="assets/cyber.jpeg"
+                        alt="AI-Driven Zero-Day Detection Model"
+                        class="project-image rounded-lg shadow-md max-w-2xl w-full"
+                        loading="lazy"
+                />
+            </div>
+
+            <!-- Methodology -->
+            <h3 class="font-bold text-lg mt-8 mb-4">Research Overview & Methodology:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Evaluate various machine learning models to determine which are most effective at detecting zero-day anomalies in network traffic.</li>
+                <li>Design and train deep learning models on known network behaviors, then adapt them to identify previously unseen anomalous patterns indicative of zero-day exploits.</li>
+                <li>Compare AI-driven detection performance against traditional IDS and SIEM systems to demonstrate improvements in detecting unknown threats.</li>
+            </ul>
+
+            <!-- Responsibilities -->
+            <h3 class="font-bold text-lg mt-8 mb-4">Project Responsibilities:</h3>
+            <p class="mb-6">
+                I am responsible for developing the model training pipeline, curating datasets of simulated malicious and benign traffic, and implementing anomaly detection algorithms.
+                My role also includes evaluating model performance, fine-tuning hyperparameters, and preparing research findings for dissemination.
+            </p>
+
+            <!-- Significance -->
+            <h3 class="font-bold text-lg mt-8 mb-4">Significance of the Research:</h3>
+            <p class="mb-6">
+                Zero-day attacks exploit vulnerabilities unknown to developers and security teams, making them invisible to conventional detection methods.
+                This research aims to close that gap by building adaptive, AI-powered security solutions capable of identifying threats in real time, significantly reducing the risk of successful cyberattacks.
+            </p>
+
+            <!-- Dissemination -->
+            <h3 class="font-bold text-lg mt-8 mb-4">Dissemination:</h3>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Presenting findings at the University of Florida Undergraduate Research Symposium 2025</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- Coursework -->
+<section id="coursework" class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Coursework</h2>
+        <div class="optimized-glass rounded-2xl p-8 card-hover">
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-black">AI & Cybersecurity Coursework</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Data Structures and Algorithms</li>
+                    <li>Computer Organization</li>
+                    <li>Discrete Structures</li>
+                    <li>Linear Algebra</li>
+                    <li>Operating Systems</li>
+                    <li>Introduction to Software Engineering</li>
+                    <li>AI Ethics, Data, & Technology</li>
+                    <li>Artificial Intelligence Fundamentals</li>
+                    <li>AI in the Built Environment</li>
+                    <li>Introduction to Undergraduate Research in Computing</li>
+                    <li>User Experience Design</li>
+                    <li>Cyber-Physical System Security</li>
+                </ul>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4 text-black">Relevant Projects & Achievements</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>UF AI Scholars Recipient</li>
+                    <li>
+                        <a href="microsoft.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+                            Microsoft Cybersecurity & AI Internship
+                        </a>
+                    </li>
+                    <li>Industry Certifications: Security+, SC-200, SC-300, MS-900</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CV/Resume -->
+<section id="cv" class="py-20 gradient-bg">
+    <div class="container mx-auto max-w-2xl text-center px-6">
+        <h2 class="text-4xl font-bold mb-8">
+            <i class="fas fa-file-alt mr-4"></i>
+            CV/Resume
+        </h2>
+        <p class="text-xl mb-8 text-blue-100">
+            Download my academic CV and resume
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fas fa-graduation-cap text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-4">Academic CV</h3>
+                <a href="assets/Dylan_Khan_CV.pdf" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    View CV
+                </a>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
+                <i class="fas fa-briefcase text-3xl mb-4 text-blue-200"></i>
+                <h3 class="font-semibold mb-4">Professional Resume</h3>
+                <a href="assets/Dylan_Khan_Resume.pdf" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-file-pdf mr-2"></i>
+                    View Resume
+                </a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-20 gradient-bg">
+<section id="contact" class="py-20 bg-gray-800">
     <div class="container mx-auto max-w-2xl text-center px-6">
-        <h2 class="text-4xl font-bold mb-8">
+        <h2 class="text-4xl font-bold mb-8 text-white">
             <i class="fas fa-envelope mr-4"></i>
-            Let's Connect
+            Contact
         </h2>
-        <p class="text-xl mb-8 text-blue-100">
-            Ready to collaborate on cybersecurity projects or discuss opportunities!
+        <p class="text-xl mb-8 text-gray-300">
+            Let's connect and discuss research opportunities!
         </p>
         <div class="grid md:grid-cols-3 gap-6">
-            <a href="mailto:khan.dxk@gmail.com" class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
-                <i class="fas fa-envelope text-3xl mb-4 text-blue-200"></i>
-                <h3 class="font-semibold mb-2">Email</h3>
-                <p class="text-sm text-blue-100">Khan.dxk@gmail.com</p>
-            </a>
-            <a href="https://www.linkedin.com/in/dylan-khan-ba64b72a3" target="_blank" class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
-                <i class="fab fa-linkedin text-3xl mb-4 text-blue-200"></i>
-                <h3 class="font-semibold mb-2">LinkedIn</h3>
-                <p class="text-sm text-blue-100">Professional Profile</p>
-            </a>
-            <a href="https://github.com/Dxk09" target="_blank" class="bg-white bg-opacity-20 rounded-xl p-6 hover:bg-opacity-30 transition-all card-hover">
-                <i class="fab fa-github text-3xl mb-4 text-blue-200"></i>
-                <h3 class="font-semibold mb-2">GitHub</h3>
-                <p class="text-sm text-blue-100">Code Repository</p>
-            </a>
+            <div class="optimized-glass rounded-xl p-6 card-hover">
+                <i class="fas fa-university text-3xl mb-4 text-blue-400"></i>
+                <h3 class="font-semibold mb-2 text-white">UF Email</h3>
+                <a href="mailto:dylan.khan@ufl.edu" class="text-sm text-blue-300 hover:text-blue-200">dylan.khan@ufl.edu</a>
+            </div>
+            <div class="optimized-glass rounded-xl p-6 card-hover">
+                <i class="fab fa-linkedin text-3xl mb-4 text-blue-400"></i>
+                <h3 class="font-semibold mb-2 text-white">LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/dylan-khan-ba64b72a3" target="_blank" class="text-sm text-blue-300 hover:text-blue-200">Professional Profile</a>
+            </div>
+            <div class="optimized-glass rounded-xl p-6 card-hover">
+                <i class="fab fa-github text-3xl mb-4 text-blue-400"></i>
+                <h3 class="font-semibold mb-2 text-white">GitHub</h3>
+                <a href="https://github.com/Dxk09" target="_blank" class="text-sm text-blue-300 hover:text-blue-200">Research Repository</a>
+            </div>
         </div>
     </div>
 </section>
@@ -530,11 +380,11 @@
 <!-- Footer -->
 <footer class="bg-gray-900 text-center py-8 border-t border-gray-700">
     <div class="container mx-auto px-6">
-        <p class="text-gray-400">&copy; 2025 Dylan Khan. All rights reserved.</p>
+        <p class="text-gray-400">&copy; 2025 Dylan Khan - University of Florida. All rights reserved.</p>
         <div class="mt-4 flex justify-center space-x-6">
-            <i class="fas fa-shield-alt text-blue-400"></i>
-            <i class="fas fa-lock text-blue-400"></i>
-            <i class="fas fa-cloud text-blue-400"></i>
+            <i class="fas fa-graduation-cap text-blue-400"></i>
+            <i class="fas fa-microscope text-blue-400"></i>
+            <i class="fas fa-brain text-blue-400"></i>
         </div>
     </div>
 </footer>
