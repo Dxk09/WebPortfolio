@@ -147,12 +147,13 @@
 <body class="bg-gray-900 text-white">
 <!-- Header -->
 <header class="gradient-bg shadow-2xl fixed w-full top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4">
-        <h1 class="text-3xl font-bold flex items-center">
+    <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+        <h1 class="text-2xl sm:text-3xl font-bold flex items-center">
             <i class="fas fa-graduation-cap mr-3 pulse-icon"></i>
             Dylan Khan
         </h1>
-        <nav class="flex space-x-6">
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex space-x-6">
             <a href="#home" class="nav-link font-medium hover:text-blue-200">Home</a>
             <a href="microsoft.html" class="nav-link font-medium hover:text-blue-200">Internship</a>
             <a href="#about" class="nav-link font-medium hover:text-blue-200">About</a>
@@ -161,17 +162,34 @@
             <a href="#cv" class="nav-link font-medium hover:text-blue-200">Resume</a>
             <a href="#contact" class="nav-link font-medium hover:text-blue-200">Contact</a>
         </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" aria-label="Toggle menu" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
     </div>
+    <!-- Mobile dropdown -->
+    <nav id="mobile-menu" class="md:hidden hidden border-t border-white/20 bg-black/20 backdrop-blur pb-3">
+        <div class="px-4 pt-2 space-y-2">
+            <a href="#home" class="block px-3 py-2 rounded-md hover:bg-white/10">Home</a>
+            <a href="microsoft.html" class="block px-3 py-2 rounded-md hover:bg-white/10">Internship</a>
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-white/10">About</a>
+            <a href="#research" class="block px-3 py-2 rounded-md hover:bg-white/10">Research</a>
+            <a href="#coursework" class="block px-3 py-2 rounded-md hover:bg-white/10">Coursework</a>
+            <a href="#cv" class="block px-3 py-2 rounded-md hover:bg-white/10">Resume</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-white/10">Contact</a>
+        </div>
+    </nav>
 </header>
 <!-- Home -->
-<section id="home" class="pt-24 pb-16 text-center gradient-bg">
+<section id="home" class="pt-28 sm:pt-24 pb-16 text-center gradient-bg">
     <div class="container mx-auto px-6">
         <div class="fade-in">
             <!-- Headshot -->
             <div class="mb-8">
                 <img src="assets/foto.jpeg" alt="Dylan Khan Headshot" class="headshot mx-auto mb-6" />
             </div>
-            <h2 class="text-5xl font-bold mb-6 typing-animation">AI & Cybersecurity Research</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6 typing-animation">AI & Cybersecurity Research</h2>
             <p class="text-xl max-w-4xl mx-auto leading-relaxed text-blue-100">
                 Hi, I’m Dylan Khan — an AI and cybersecurity researcher at the University of Florida, dedicated to building smarter, more resilient digital defenses. I specialize in applying machine learning to real-world security challenges, with a focus on detecting zero-day anomalies faster and more accurately. My work bridges advanced AI research with practical cybersecurity strategies, driven by the goal of staying one step ahead of evolving threats. I thrive on solving complex problems, pushing the boundaries of technology, and continuously expanding my expertise in this rapidly changing field.
             </p>
@@ -393,8 +411,22 @@
                     block: 'start'
                 });
             }
+            // Close mobile menu after navigation
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 
     // Add scroll effect for fade-in animations
     const observerOptions = {

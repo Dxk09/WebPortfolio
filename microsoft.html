@@ -130,6 +130,12 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
         }
 
+        /* Force mobile nav visibility rules (belt-and-suspenders) */
+        @media (max-width: 1023.98px) {
+            #site-nav { display: none !important; }
+            #mobile-menu-button { display: inline-flex !important; }
+        }
+
         /* Optimized image rendering */
         .project-image {
             image-rendering: crisp-edges;
@@ -166,29 +172,45 @@
 <body class="bg-gray-900 text-white">
 <!-- Header -->
 <header class="gradient-bg shadow-2xl fixed w-full top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4">
-        <h1 class="text-3xl font-bold flex items-center">
+    <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+        <h1 class="text-2xl sm:text-3xl font-bold flex items-center">
             <i class="fas fa-shield-alt mr-3 pulse-icon"></i>
             Dylan Khan
         </h1>
-        <nav class="flex space-x-6">
+        <!-- Desktop nav -->
+        <nav id="site-nav" class="hidden lg:flex space-x-6">
             <a href="index.html" class="nav-link font-medium hover:text-blue-200">Home</a>
             <a href="#Internship" class="nav-link font-medium hover:text-blue-200">Internship</a>
             <a href="#projects" class="nav-link font-medium hover:text-blue-200">Projects</a>
             <a href="#about" class="nav-link font-medium hover:text-blue-200">About</a>
             <a href="#contact" class="nav-link font-medium hover:text-blue-200">Contact</a>
         </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" aria-label="Toggle menu" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
     </div>
+    <!-- Mobile dropdown -->
+    <nav id="mobile-menu" class="lg:hidden hidden border-t border-white/20 bg-black/20 backdrop-blur pb-3">
+        <div class="px-4 pt-2 space-y-2">
+            <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-white/10">Home</a>
+            <a href="#Internship" class="block px-3 py-2 rounded-md hover:bg-white/10">Internship</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-white/10">Projects</a>
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-white/10">About</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-white/10">Contact</a>
+        </div>
+    </nav>
 </header>
 
 <!-- Home -->
-<section id="Internship" class="pt-24 pb-16 text-center gradient-bg">
+<section id="Internship" class="pt-28 sm:pt-24 pb-16 text-center gradient-bg">
     <div class="container mx-auto px-6">
         <div class="fade-in">
             <div class="mb-8">
                 <i class="fas fa-user-shield text-6xl mb-6 text-blue-200"></i>
             </div>
-            <h2 class="text-3xl font-bold mb-6 typing-animation">Microsoft Cybersecurity & AI Portfolio</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 typing-animation">Microsoft Cybersecurity & AI Portfolio</h2>
             <p class="text-xl max-w-3xl mx-auto leading-relaxed text-blue-100">
                 Welcome! This site showcases my projects and contributions during my Microsoft internship. I have been hands-on with Microsoft Entra ID, Microsoft Copilot, Azure, and more.
                 I am passionate about cybersecurity and Artificial Intelligence and am eager to continue learning to pave my future with Microsoft.
@@ -551,6 +573,11 @@
                     block: 'start'
                 });
             }
+            // Close mobile menu after navigation
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     });
 
@@ -575,6 +602,15 @@
         el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         observer.observe(el);
     });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 </script>
 </body>
 </html>
